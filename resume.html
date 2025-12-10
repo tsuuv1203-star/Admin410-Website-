@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>Tyler S Resume</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+
+  <header class="site-header">
+    <div class="container">
+      <div class="header-row">
+        <div class="brand">
+          <span class="brand__name">Tyler S</span>
+          <span class="brand__tag">Resume & Media</span>
+        </div>
+
+        <nav class="nav" aria-label="Primary">
+          <a class="nav__link" href="index.html">Home</a>
+          <a class="nav__link" href="about.html">About</a>
+          <a class="nav__link is-active" href="resume.html" aria-current="page">Resume</a>
+
+          <button class="nav__button" id="themeToggle" type="button" aria-pressed="false">
+            Dark mode
+          </button>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <!-- section 1 -->
+    <div class="card bg-1">
+      <h1>Resume</h1>
+      <p>
+        These are some examples of experiences I had that have improved upon my understanding of the topic or made me more interested in the topic. 
+      </p>
+
+      <img
+        class="content-imgr"
+        src="IMG_1867.jpeg"
+        alt="derry fire dept"
+      />
+<p>
+(This Photo shows some of the work I did over the summer working for a massonry company, this is the new Derry fire department)</p>
+      <p class="links">
+        <a class="pill" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a class="pill" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </p>
+    </div>
+
+    <!--section 2-->
+    <div class="card bg-2">
+      <h2>Skills</h2>
+      <ul class="list">
+        <li>Communication and teamwork</li>
+        <li>Hard working and consitant</li>
+        <li>Basic web development (HTML/CSS)</li>
+        <li>Excel/spreadsheet analysis</li>
+      </ul>
+    </div>
+
+    <div class="card bg-3">
+      <h2>Experience</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Role</th>
+            <th>Organization</th>
+            <th>Highlights</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Landscaper/Massonry</td>
+            <td>Company/local business (Greeleys Landscaping)</td>
+            <td>done over 50 plantings and patios(residential & commercial)</td>
+          </tr>
+          <tr>
+            <td>Group Work</td>
+            <td>Courses/ Clubs</td>
+            <td>Built a team culture from scratch, collaborated and learned from team members, found ways to tailor to each members working style.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card bg-2">
+      <h2>Video</h2>
+      <p>
+        Here’s a embedded video.
+      </p>
+
+      
+<div class="video-wrap">
+  <iframe 
+  src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=y8iQLc8IRMkzWx0W" 
+   title="YouTube video player"
+     frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+       referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+    
+  </iframe>
+</div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <div>Built for ADMN 410 (HTML/CSS). Thanks for Visiting!!!</div>
+      <div>©<span id="year"></span> Tyler S</div>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      const yearEl = document.getElementById("year");
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+      const btn = document.getElementById("themeToggle");
+      const key = "admn410_theme";
+      const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+      function setTheme(dark) {
+        document.body.classList.toggle("theme-dark", dark);
+        if (btn) btn.setAttribute("aria-pressed", String(dark));
+        if (btn) btn.textContent = dark ? "Light mode" : "Dark mode";
+      }
+
+      const saved = localStorage.getItem(key);
+      setTheme(saved ? saved === "dark" : prefersDark);
+
+      if (btn) {
+        btn.addEventListener("click", function () {
+          const darkNow = !document.body.classList.contains("theme-dark");
+          setTheme(darkNow);
+          localStorage.setItem(key, darkNow ? "dark" : "light");
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

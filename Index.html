@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> Tyler S Home</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <header class="site-header">
+     <div class="container header-row">
+      <div class="brand">
+        <div class="brand__name">Tyler Sullivan</div>
+        <div class="brand__tag">Professional Portfolio</div>
+      </div>
+
+        <nav class="nav" aria-label="Primary">
+          <a class="nav__link is-active" href="index.html" aria-current="page">Home</a>
+          <a class="nav__link" href="about.html">About</a>
+          <a class="nav__link" href="resume.html">Resume</a>
+
+          <button class="nav__button" id="themeToggle" type="button" aria-pressed="false">
+            Dark mode
+          </button>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <!-- DIV #1 -->
+    <div class="hero bg-1 card">
+      <div class="hero__text">
+        <h1>Hi, I’m Tyler Sullivan.</h1>
+        <p>
+          I’m a student at UNH Paul College interested in <strong>business, leadership, and technology</strong>.
+          This site is a quick portfolio of who I am, what I’ve done, and where I’m headed.
+        </p>
+        <p class="links">
+          <a class="pill" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a class="pill" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        </p>
+      </div>
+
+      <div class="hero__media">
+        <img
+          class="profile-img"
+          src="Project_UNH-Peter-T-Paul-College_01.jpg"
+          alt="UNH paul college picture"
+        />
+      </div>
+    </div>
+
+    <!-- DIV #2 -->
+    <div class="card bg-2">
+      <h2>Featured Projects </h2>
+      <p>Here are a few highlights.</p>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Project</th>
+            <th>What I Did</th>
+            <th>Tools</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Portfolio Website</td>
+            <td>Built a multi-page site with HTML/CSS, navigation, tables, and media.</td>
+            <td>HTML, CSS</td>
+          </tr>
+          <tr>
+            <td>Massonry/ Landscpaing</td>
+            <td>Created many patios and walk-ways with highquality and durability, while also learning the different applications that massonry has .</td>
+            <td>Bricks and sheer will-power </td>
+          </tr>
+          <tr>
+            <td>Data Worksheet</td>
+            <td>Used formulas and formatted outputs for reporting, personal finace, and professonal development.</td>
+            <td>Excel, Access</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="note">
+        I only have a basic understanding of the tools and skills I used. But im super eager to learn more, refine my skills and deepen my understanding of information systems, marketing and other business related deciplines.
+      </p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <div>© <span id="year"></span> Tyler M. Sullivan</div>
+      <div class="footer-links">
+        <a href="https://www.unh.edu/" target="_blank" rel="noopener noreferrer">UNH</a>
+      </div>
+    </div>
+  </footer>
+
+  
+    <script>
+    (function () {
+      const yearEl = document.getElementById("year");
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+      const btn = document.getElementById("themeToggle");
+      const key = "admn410_theme";
+      const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+      function setTheme(dark) {
+        document.body.classList.toggle("theme-dark", dark);
+        if (btn) btn.setAttribute("aria-pressed", String(dark));
+        if (btn) btn.textContent = dark ? "Light mode" : "Dark mode";
+      }
+
+      const saved = localStorage.getItem(key);
+      setTheme(saved ? saved === "dark" : prefersDark);
+
+      if (btn) {
+        btn.addEventListener("click", function () {
+          const darkNow = !document.body.classList.contains("theme-dark");
+          setTheme(darkNow);
+          localStorage.setItem(key, darkNow ? "dark" : "light");
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

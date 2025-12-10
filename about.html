@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+  <title>Tyler S About</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="header-row">
+        <div class="brand">
+          <span class="brand__name">Tyler Sullivan</span>
+          <span class="brand__tag">About Me</span>
+        </div>
+
+        <nav class="nav" aria-label="Primary">
+          <a class="nav__link" href="index.html">Home</a>
+          <a class="nav__link is-active" href="about.html" aria-current="page">About</a>
+          <a class="nav__link" href="resume.html">Resume</a>
+
+          <button class="nav__button" id="themeToggle" type="button" aria-pressed="false">
+            Dark mode
+          </button>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <!-- first sectio -->
+    <div class="card bg-2">
+      <h1>About Me</h1>
+      <p>
+        Write a short professional bio here (major, interests, goals, what you’re looking for).
+        Keep it clean and employer-friendly.
+      </p>
+      <p class="links">
+        <a class="pill" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </p>
+    </div>
+
+    <!-- second section -->
+    <div class="card bg-3 grid">
+      <div>
+        <h2>What I’m Good At</h2>
+        <p>
+        <strong> Strengths</strong>
+        </p>
+        <p>
+          Energetic, outgoing, colaborative, hard working, and eager to learn
+          <p/>
+
+        
+        <img
+          class="content-img"
+          src="IMG_2979.jpeg"
+          alt="me picture"
+        />
+        
+      </div>
+
+      <div>
+        <h2>Skills </h2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Skills</th>
+              <th>Comfort Level</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Business</td>
+              <td>Teamwork, perseverance, critical thinking</td>
+              <td>Strong</td>
+            </tr>
+            <tr>
+              <td>Tech</td>
+              <td>HTML/CSS basics, spreadsheets</td>
+              <td>Activly Growing</td>
+            </tr>
+            <tr>
+              <td>Communication</td>
+              <td>Writing, professional email, public speaking</td>
+              <td>Strong</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <div>Thanks for visiting. Contact: Tsuuv1203@email.com</div>
+      <div>© <span id="year"></span></div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const yearEl = document.getElementById("year");
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+      const btn = document.getElementById("themeToggle");
+      const key = "admn410_theme";
+      const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+      function setTheme(dark) {
+        document.body.classList.toggle("theme-dark", dark);
+        if (btn) btn.setAttribute("aria-pressed", String(dark));
+        if (btn) btn.textContent = dark ? "Light mode" : "Dark mode";
+      }
+
+      const saved = localStorage.getItem(key);
+      setTheme(saved ? saved === "dark" : prefersDark);
+
+      if (btn) {
+        btn.addEventListener("click", function () {
+          const darkNow = !document.body.classList.contains("theme-dark");
+          setTheme(darkNow);
+          localStorage.setItem(key, darkNow ? "dark" : "light");
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
