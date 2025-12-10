@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-  <title>Tyler S Resume</title>
+  <title>Tyler Sullivan Resume</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -12,7 +12,7 @@
     <div class="container">
       <div class="header-row">
         <div class="brand">
-          <span class="brand__name">Tyler S</span>
+          <span class="brand__name">Tyler Sullivan</span>
           <span class="brand__tag">Resume & Media</span>
         </div>
 
@@ -34,8 +34,14 @@
     <div class="card bg-1">
       <h1>Resume</h1>
       <p>
-        These are some examples of experiences I had that have improved upon my understanding of the topic or made me more interested in the topic. 
+        Some examples of experiences I had that have improved upon my understanding of the topic or made me more interested in the topic include, a lot different designs and layouts for bricks and pavers which made me want to do more in that field. 
       </p>
+      <p>
+        Working on Excel and Access I had a very basic understanding of how to use these systems, my information and technology class deepen my understanding of how to manipulate raw data and numbers into ways that can help grow a companies profits or cut down on expenses. 
+        <p>I had little to no experience with HTML but after learning the basics I was able to expand my knowledge on my own by experimenting with codes and different styles. 
+      </p>
+      </p>
+
 
       <img
         class="content-imgr"
@@ -43,9 +49,9 @@
         alt="derry fire dept"
       />
 <p>
-(This Photo shows some of the work I did over the summer working for a massonry company, this is the new Derry fire department)</p>
+(This Photo shows some of the work I did over the summer working for a masonry company, this is the new Derry fire department)</p>
       <p class="links">
-        <a class="pill" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a class="pill" href="https://www.linkedin.com/in/tyler-sullivan-729344290" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a class="pill" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
       </p>
     </div>
@@ -55,7 +61,7 @@
       <h2>Skills</h2>
       <ul class="list">
         <li>Communication and teamwork</li>
-        <li>Hard working and consitant</li>
+        <li>Hard working and consistent</li>
         <li>Basic web development (HTML/CSS)</li>
         <li>Excel/spreadsheet analysis</li>
       </ul>
@@ -73,7 +79,7 @@
         </thead>
         <tbody>
           <tr>
-            <td>Landscaper/Massonry</td>
+            <td>Landscaper/Masonry</td>
             <td>Company/local business (Greeleys Landscaping)</td>
             <td>done over 50 plantings and patios(residential & commercial)</td>
           </tr>
@@ -82,6 +88,11 @@
             <td>Courses/ Clubs</td>
             <td>Built a team culture from scratch, collaborated and learned from team members, found ways to tailor to each members working style.</td>
           </tr>
+          <tr>
+            <td>Current College Student</td>
+            <td> University of New Hampshire & Plymouth State University</td>
+            <td> Studying Marketing as a Junior, Learned many basic skills with financing, spreadsheets, AI manipulation, public speaking, collaborative group work projects, and many more basic but necessary skills.</td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -89,19 +100,10 @@
     <div class="card bg-2">
       <h2>Video</h2>
       <p>
-        Here’s a embedded video.
+        Here is a embedded video.
       </p>
-
-      
 <div class="video-wrap">
-  <iframe 
-  src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=y8iQLc8IRMkzWx0W" 
-   title="YouTube video player"
-     frameborder="0" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-       referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-    
-  </iframe>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/CUEJkJ9HDbY?si=VgHEBUL1Cxv8bG16" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
     </div>
   </main>
@@ -116,17 +118,14 @@
     (function () {
       const yearEl = document.getElementById("year");
       if (yearEl) yearEl.textContent = new Date().getFullYear();
-
       const btn = document.getElementById("themeToggle");
       const key = "admn410_theme";
       const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-
       function setTheme(dark) {
         document.body.classList.toggle("theme-dark", dark);
         if (btn) btn.setAttribute("aria-pressed", String(dark));
         if (btn) btn.textContent = dark ? "Light mode" : "Dark mode";
       }
-
       const saved = localStorage.getItem(key);
       setTheme(saved ? saved === "dark" : prefersDark);
 

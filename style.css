@@ -7,9 +7,9 @@
   --brand: #0b4f6c;
   --accent: #b91c1c;
 
-  --bg1: #e8f3fb; /* background color #1 */
-  --bg2: #f3f1ff; /* background color #2 */
-  --bg3: #f7fff0; /* background color #3 */
+  --bg1: #e8f3fb; 
+  --bg2: #f3f1ff; 
+  --bg3: #f7fff0; 
 
   --border: #d9e2ec;
   
@@ -21,7 +21,7 @@
 
 html, body {
   margin: 0;
-  padding: 0;
+  padding: 40;
 }
 
 body {
@@ -32,13 +32,13 @@ body {
 }
 
 h1, h2, h3 {
-  font-family: Georgia, "Times New Roman", serif; /* font #2 */
-  color: var(--brand); /* font color #1 */
-  margin-top: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--brand); 
+  margin-top: 60;
 }
 
 a {
-  color: var(--accent); /* font color #2 */
+  color: var(--accent);
   text-decoration: none;
 }
 
@@ -51,23 +51,8 @@ a:hover {
   margin: 0 auto;
 }
 
-/* ========== Accessibility ========== */
-.skip-link {
-  position: absolute;
-  left: -999px;
-  top: 10px;
-  background: #000;
-  color: #fff;
-  padding: 8px 10px;
-  border-radius: 8px;
-  z-index: 999;
-}
 
-.skip-link:focus {
-  left: 10px;
-}
 
-/* ========== Header / Nav ========== */
 .site-header {
   position: sticky;
   top: 0;
@@ -134,9 +119,9 @@ a:hover {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
   padding: 15px;
   margin: 20px 0;
+  text-align: center;
 }
 
 .bg-1 { background: var(--bg1); }
@@ -150,7 +135,8 @@ a:hover {
   align-items: margin-left;
 }
 
-.hero__text p { color: var(--text); }
+.hero__text p { color: var(--text);
+text-align: center; }
 
 .links { margin: 20px 0 0; }
 
@@ -189,25 +175,26 @@ a:hover {
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
+  grid-template-columns: 5fr 5fr;
+  gap: 30px;
 }
 
 /* ========== Tables ========== */
 .table {
   width: 100%;
+  height: 300px;
   border-collapse: collapse;
-  margin-top: 10px;
+  margin-top: 50px;
   background: rgba(255,255,255,0.55);
-  border-radius: 12px;
-  overflow: hidden;
+  border-radius: 20px;
+  
 }
 
 .table th, .table td {
   border-bottom: 10px solid rgba(0,0,0,0.08);
   padding: 10px 12px;
   text-align: left;
-  vertical-align: 10px top;
+  vertical-align: 10px center;
 }
 
 .table th {
@@ -221,12 +208,15 @@ a:hover {
 
 /* ========== Lists ========== */
 .list {
-  margin: 8px 0 0;
+  margin: 30px 0 0;
+  gap: 50px;
+  text-align: margin-left;
 }
 
 .note {
   color: var(--muted);
-  margin-top: 10px;
+  margin-top: 20px;
+  text-align: center;
 }
 
 /* ========== Video Embed ========== */
@@ -240,16 +230,18 @@ a:hover {
 
 /* ========== Footer ========== */
 .site-footer {
-  margin-top: 30px;
+  
+  margin-top: 180px;
   padding: 18px 0;
-  border-top: 5px solid var(--border);
+  border-top: 80px solid var(--border);
   background: var(--card);
+  bottom: 100%;
 }
 
 .footer-row {
   display: flex;
   justify-content: space-between;
-  gap: 12px;
+  gap: 50px;
   flex-wrap: wrap;
   color: var(--muted);
 }
@@ -273,7 +265,7 @@ a:hover {
   --bg3: rgba(134,239,172,0.08);
 
   --border: rgba(255,255,255,0.10);
-  --shadow: 0 10px 30px rgba(0,0,0,0.35);
+
 }
 
 
